@@ -15,7 +15,7 @@ public class RepeatingBackground : MonoBehaviour {
 	private void FixedUpdate() {
 		Vector3 pos = transform.position;
 
-		pos.x -= scrollSpeed * Time.deltaTime;
+		pos.x -= scrollSpeed * Time.deltaTime * GameController.speedModifier;
 
 		if(transform.position.x < -ScrollWidth){
 			Offscreen (ref pos);

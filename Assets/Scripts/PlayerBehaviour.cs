@@ -27,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other){
 		beenHit = true;
+		GameController.speedModifier = 0;
 
 		GetComponent<Animator> ().speed = 0.0f;
 	}
