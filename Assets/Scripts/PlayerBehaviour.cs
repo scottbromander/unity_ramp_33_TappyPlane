@@ -30,6 +30,10 @@ public class PlayerBehaviour : MonoBehaviour {
 		GameController.speedModifier = 0;
 
 		GetComponent<Animator> ().speed = 0.0f;
+
+		if (!gameObject.GetComponent<GameEndBehaviour> ()) {
+			gameObject.AddComponent<GameEndBehaviour> ();
+		}
 	}
 	
 	// Update is called once per frame

@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		speedModifier = 1.0f;
-		InvokeRepeating ("CreateObstacle", 1.5f, 1.0f);
+		gameObject.AddComponent<GameStartBehaviour> ();
 	}
 
 	/// <summary>
