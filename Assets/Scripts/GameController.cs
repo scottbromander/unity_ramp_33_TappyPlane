@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
 
@@ -20,6 +21,9 @@ public class GameController : MonoBehaviour {
 	[Tooltip("Max Y value for the obstacle")]
 	public float obstacleMaxY = 1.3f;
 
+	private static Text scoreText;
+	private static int score;
+
 	// Use this for initialization
 	void Start () {
 		speedModifier = 1.0f;
@@ -32,6 +36,15 @@ public class GameController : MonoBehaviour {
 	void CreateObstacle() {
 		Instantiate (obstacleReference, new Vector3 (RepeatingBackground.ScrollWidth, 
 			Random.Range (obstacleMinY, obstacleMaxY), 0.0f), Quaternion.identity);
+	}
+
+	public static int Score {
+		get {
+			return score;
+		} set {
+			score = value;
+			scoreText.text = score.ToString ();
+		}
 	}
 
 }
