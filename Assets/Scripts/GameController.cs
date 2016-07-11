@@ -28,6 +28,8 @@ public class GameController : MonoBehaviour {
 	void Start () {
 		speedModifier = 1.0f;
 		gameObject.AddComponent<GameStartBehaviour> ();
+		score = 0;
+		scoreText = GameObject.Find ("Score Text").GetComponent<Text> ();
 	}
 
 	/// <summary>
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour {
 			return score;
 		} set {
 			score = value;
+
 			scoreText.text = score.ToString ();
 		}
 	}
